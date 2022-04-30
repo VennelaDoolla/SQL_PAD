@@ -1,0 +1,22 @@
+Instruction
+
+Find the number of actors whose last name is one of the following: 'DAVIS', 'BRODY', 'ALLEN', 'BERRY'
+
+Table: actor
+  col_name   | col_type
+-------------+--------------------------
+ actor_id    | integer
+ first_name  | text
+ last_name   | text
+Sample results
+
+last_name | count
+-----------+-------
+ ALLEN     |     3
+ DAVIS     |     3
+ 
+ Query:
+ 
+ SELECT last_name,count(last_name)
+FROM actor where last_name in ('DAVIS', 'BRODY', 'ALLEN', 'BERRY')
+group by last_name;
